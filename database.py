@@ -1,14 +1,43 @@
+# database.py
 import sqlite3
+import os
+import sys
 from datetime import datetime, timedelta
 
 class Database:
     def __init__(self):
-        self.conn = sqlite3.connect("personal_assistant.db")
+        """
+        Initializes the database connection. The database file is placed in a
+        persistent location (e.g., the user's home directory) to ensure data
+        is saved between application runs, especially after PyInstaller packaging.
+        """
+        # Determine the base path for the database file
+        # This will be a persistent location like the user's home directory
+        try:
+            # Check if the application is running as a PyInstaller bundle
+            if sys.frozen:
+                app_data_dir = os.path.join(os.path.expanduser('~'), '.personal_assistant_app')
+            else:
+                # If running as a normal script, save in the local directory
+                app_data_dir = os.path.dirname(os.path.abspath(__file__))
+        except Exception as e:
+            # Fallback for unexpected errors
+            app_data_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # Create the directory if it doesn't exist
+        if not os.path.exists(app_data_dir):
+            os.makedirs(app_data_dir)
+        
+        db_path = os.path.join(app_data_dir, 'personal_assistant.db')
+        
+        self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
         self.create_tables()
 
     def create_tables(self):
-        self.cursor.execute("DROP TABLE IF EXISTS reminders")  # Add this line
+        """Creates tables if they don't exist. This will not overwrite existing data."""
+        # Note: The "DROP TABLE" command was removed to prevent data loss on startup.
+        
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS contacts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
