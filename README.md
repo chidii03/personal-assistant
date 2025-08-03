@@ -2,7 +2,7 @@ Personal Assistant (Premium Edition)
 A robust and intuitive desktop application designed to streamline daily personal and professional management. This tool provides a centralized hub for managing contacts, scheduling meetings, and setting reminders, all within a clean and user-friendly interface.
 
 🌟 Features
-Contact Management: Effortlessly add, view, update, and delete contacts. The contacts list is automatically sorted by ID for a clear, chronological overview.
+Contact Management: Effortlessly add, view, update, and delete contacts. The contact’s list is automatically sorted by ID for a clear, chronological overview.
 
 Meeting/Appointment Scheduling: Keep track of your schedule by creating and managing meetings. All appointments are numerically ordered by their ID.
 
@@ -63,11 +63,11 @@ Contributions are what make the open-source community such an amazing place to l
 
 Fork the Project.
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature).
+Create your Feature Branch (git checkout -b feature/Amazing Feature).
 
-Commit your Changes (git commit -m 'Add some AmazingFeature').
+Commit your Changes (git commit -m 'Add some Amazing Feature').
 
-Push to the Branch (git push origin feature/AmazingFeature).
+Push to the Branch (git push origin feature/Amazing Feature).
 
 Open a Pull Request.
 
