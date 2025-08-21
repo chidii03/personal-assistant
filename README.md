@@ -58,9 +58,10 @@ cd your-repo-name
 pip install -r requirements.txt
 
 4. Usage
- Run the application from your terminal:
 
- python main.py
+   Run the application from your terminal:
+
+   python main.py
 
 The application window will appear, and you can start managing your personal assistant data.
 
